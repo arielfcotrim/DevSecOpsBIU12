@@ -52,6 +52,8 @@ def get_smallest_number(num1, num2):
         return smallest_num_msg + f"{num2}."
 
 
+# initialize variable which calls the function to get the smallest number
+# initialize the function to get user input as the argument of the smallest number function
 smallest_number = get_smallest_number(*get_num_input_from_user())
 print(f"\n{smallest_number}")
 
