@@ -1,7 +1,7 @@
-# This python script receives a user input of two different integers and returns which integer is the smallest value
+# This python script receives a user input of two different numbers and returns which number is the smallest value
 
 # initialize variable for message to be returned if both numbers are equal
-nums_are_equal_msg = "Both numbers are equal. Please, input two integers with different values."
+nums_are_equal_msg = "Both numbers are equal. Please, input two numbers with different values."
 
 
 def get_smallest_number(num1, num2):
@@ -35,7 +35,7 @@ def get_num_input_from_user():
 
             # if both numbers are equal, restart the loop
             if num_input_1 == num_input_2:
-                print("\nBoth numbers are equal. Please, input two NUMBERS with different values.\n")
+                print(f"\n{nums_are_equal_msg}\n")
                 continue
 
             # call function to get the smallest number and print the message
