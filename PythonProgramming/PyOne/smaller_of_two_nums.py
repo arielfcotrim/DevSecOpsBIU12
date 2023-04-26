@@ -1,7 +1,42 @@
 # This python script receives a user input of two different numbers and returns which number is the smallest value
 
-# initialize variable for message to be returned if both numbers are equal
-nums_are_equal_msg = "Both numbers are equal. Please, input two numbers with different values."
+
+# initialize global variable for script execution completed successfully
+goodbye_message = "Thank you for using this program :) " \
+                  "\nGoodbye!"
+
+
+def get_num_input_from_user():
+    # initialize variables for error messages
+    invalid_input_msg = "Invalid input! You must input two NUMBERS."
+    nums_are_equal_msg = "Both numbers are equal. Please, input two numbers with different values."
+
+    # the script should run until the conditions are met
+    while True:
+        try:
+            # get user input to inject into function parameters
+            num1 = float(input("Insert the first number: "))
+            # if input is an integer, convert its type to integer
+            if num1.is_integer():
+                num1 = int(num1)
+
+            # get user input to inject into function parameters
+            num2 = float(input("Insert the second number: "))
+            # if input is an integer, convert its type to integer
+            if num2.is_integer():
+                num2 = int(num2)
+
+            # if both numbers are equal, restart the loop
+            if num1 == num2:
+                print(f"\n{nums_are_equal_msg}\n")
+                continue
+
+            # if two valid and non-identical numerical values are input, return both values (breaks out of the loop)
+            return num1, num2
+
+        # if any value besides a number is provided, print an error message
+        except ValueError:
+            print(f"\n{invalid_input_msg}\n")
 
 
 def get_smallest_number(num1, num2):
@@ -17,42 +52,8 @@ def get_smallest_number(num1, num2):
         return smallest_num_msg + f"{num2}."
 
 
-def get_num_input_from_user():
-    # the script should run until the conditions are met
-    while True:
-        try:
-            # get user input to inject into function parameters
-            num_input_1 = float(input("Insert your first number: "))
-            num_input_2 = float(input("Insert your second number: "))
-
-            # check if inputted numbers are integers
-            # if so, convert them to integers in order to print the correct message
-            if num_input_1.is_integer():
-                num_input_1 = int(num_input_1)
-
-            if num_input_2.is_integer():
-                num_input_2 = int(num_input_2)
-
-            # if both numbers are equal, restart the loop
-            if num_input_1 == num_input_2:
-                print(f"\n{nums_are_equal_msg}\n")
-                continue
-
-            # call function to get the smallest number and print the message
-            print(f"\n{get_smallest_number(num_input_1, num_input_2)}")
-
-            # then, break out of the loop
-            break
-
-        # if any value besides an integer is inputted, print an error message
-        except ValueError:
-            print("\nInvalid input! You must input two NUMBERS.\n")
-
-
-# call function that receives user input of two different number values
-# this function also calls the function to get the smallest number
-get_num_input_from_user()
+smallest_number = get_smallest_number(*get_num_input_from_user())
+print(f"\n{smallest_number}")
 
 # script finished successfully
-print("\nThank you for using this program :)"
-      "\nGoodbye!")
+print(f"\n{goodbye_message}")
