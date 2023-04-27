@@ -5,13 +5,15 @@
 goodbye_message = "Thank you for using this program :) " \
                   "\nGoodbye!"
 
-no_unique_highest_msg = "There is no unique highest number. Please input three numbers with different values."
+no_unique_highest_msg = "There is no unique highest number..."
 
 
 def get_num_input_from_user():
     # initialize variables for error messages
-    invalid_input_msg = "Invalid input! You must input three NUMBERS."
-    nums_are_equal_msg = "All numbers are equal. Please, input three numbers with different values."
+    invalid_input_msg = "Invalid input! You must input three NUMBERS; no other characters allowed."
+    nums_are_equal_msg = "All numbers are equal..."
+    highest_num_rule_explanation = "* There should be at least ONE number with a unique value.\n" \
+                                   "* There should be ONLY ONE high number value."
 
     while True:
         try:
@@ -40,13 +42,16 @@ def get_num_input_from_user():
                 else:
                     num3 = num_input
 
-                # if all numbers are equal...............................
+                # if all numbers are equal, print error + rule explanation
+                # reset the counter and start over
                 if num1 == num2 == num3:
-                    print(f"\n{nums_are_equal_msg}\n")
+                    print(f"\n{nums_are_equal_msg}"
+                          f"\n{highest_num_rule_explanation}"
+                          f"\n")
                     continue
 
-                # if all conditions were met, increment the counter and continue
                 else:
+                    # increment the counter if all conditions were met for current loop
                     counter += 1
 
             # determine the highest value
@@ -60,8 +65,12 @@ def get_num_input_from_user():
             ):
                 return num1, num2, num3
 
-            print(f"\n{no_unique_highest_msg}\n")
+            # if there are two highest values which are equal, notify user and restart the loop
+            print(f"\n{no_unique_highest_msg}"
+                  f"\n{highest_num_rule_explanation}"
+                  f"\n")
 
+        # catch any values which are not of type float or int
         except ValueError:
             print(f"\n{invalid_input_msg}\n")
 
@@ -153,3 +162,32 @@ print(f"\n{goodbye_message}")
 #
 #         except ValueError:
 #             print(f"\n{invalid_input_msg}\n")
+
+
+# def get_highest_num(num1, num2, num3):
+#     # initialize variables for messages to be returned alongside the larger value
+#     highest_num_msg = "The largest number is "
+#
+#     # initialize variable for the largest number
+#     highest_num = 0
+#
+#     # determine the highest value
+#     if num1 >= num2 and num1 >= num3:
+#         highest_num = num1
+#     elif num2 >= num1 and num2 >= num3:
+#         highest_num = num2
+#     else:
+#         highest_num = num3
+#
+#     # check if there is only one highest number
+#     if highest_num == num1 and highest_num != num2 and highest_num != num3:
+#         return highest_num_msg + f"{num1}."
+#     elif highest_num == num2 and highest_num != num1 and highest_num != num3:
+#         return highest_num_msg + f"{num2}."
+#     elif highest_num == num3 and highest_num != num1 and highest_num != num2:
+#         return highest_num_msg + f"{num3}."
+#     else:
+#         return no_unique_highest_msg
+
+    # return the largest number with the appropriate message
+    # return largest_num_msg + f"{largest_num}."
