@@ -5,40 +5,59 @@
 goodbye_message = "Thank you for using this program :) " \
                   "\nGoodbye!"
 
+no_unique_highest_msg = "There is no unique highest number. Please input three numbers with different values."
+
 
 def get_num_input_from_user():
     # initialize variables for error messages
     invalid_input_msg = "Invalid input! You must input three NUMBERS."
     nums_are_equal_msg = "All numbers are equal. Please, input three numbers with different values."
-    no_unique_highest_msg = "There is no unique highest number. Please input three numbers with different values."
 
     while True:
         try:
-            # initialize variables for numerical values to be input by user
-            num1 = float(input("Insert a number: "))
-            num2 = float(input("Insert a number: "))
-            num3 = float(input("Insert a number: "))
+            # initialize variables for numbers as zero since value will be assigned based on input and loop number
+            num1 = 0
+            num2 = 0
+            num3 = 0
 
-            # if input numbers are not floats, convert to integers
-            if num1.is_integer():
-                num1 = int(num1)
-            if num2.is_integer():
-                num2 = int(num2)
-            if num3.is_integer():
-                num3 = int(num3)
+            counter = 0
+            while counter < 3:
+                # initialize variable for rule on suffix
+                digit = counter + 1
+                suffix = f"{'st' if (counter + 1) == 1 else 'nd' if (counter + 1) == 2 else 'rd' if (counter + 1) == 3 else 'th'}"
 
-            # if all numbers are equal, restart the loop
-            if num1 == num2 == num3:
-                print(f"\n{nums_are_equal_msg}\n")
-                continue
+                # get input from user using the current loop iteration number and its suffix
+                num_input = float(input(f"Insert the {digit}{suffix} number: "))
+                # if not float, convert input to int
+                if num_input.is_integer():
+                    num_input = int(num_input)
+
+                # each loop, assign the current input to the appropriate variable
+                if counter == 0:
+                    num1 = num_input
+                elif counter == 1:
+                    num2 = num_input
+                else:
+                    num3 = num_input
+
+                # if all numbers are equal...............................
+                if num1 == num2 == num3:
+                    print(f"\n{nums_are_equal_msg}\n")
+                    continue
+
+                # if all conditions were met, increment the counter and continue
+                else:
+                    counter += 1
 
             # determine the highest value
             highest_num = max(num1, num2, num3)
 
             # check if there is only one highest number
-            if (num1 == highest_num and num1 != num2 and num1 != num3) or \
-                    (num2 == highest_num and num2 != num1 and num2 != num3) or \
-                    (num3 == highest_num and num3 != num1 and num3 != num2):
+            if (
+                    (num1 == highest_num and num1 != num2 and num1 != num3) or
+                    (num2 == highest_num and num2 != num1 and num2 != num3) or
+                    (num3 == highest_num and num3 != num1 and num3 != num2)
+            ):
                 return num1, num2, num3
 
             print(f"\n{no_unique_highest_msg}\n")
@@ -70,7 +89,7 @@ def get_highest_num(num1, num2, num3):
     elif highest_num == num3 and highest_num != num1 and highest_num != num2:
         return highest_num_msg + f"{num3}."
     else:
-        return "There is no unique highest number. Please input three numbers with different values."
+        return no_unique_highest_msg
 
     # return the largest number with the appropriate message
     # return largest_num_msg + f"{largest_num}."
@@ -83,3 +102,54 @@ print(f"\n{largest_number}")
 
 # script finished successfully
 print(f"\n{goodbye_message}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def get_num_input_from_user():
+#     # initialize variables for error messages
+#     invalid_input_msg = "Invalid input! You must input three NUMBERS."
+#     nums_are_equal_msg = "All numbers are equal. Please, input three numbers with different values."
+#
+#     while True:
+#         try:
+#             # initialize variables for numerical values to be input by user
+#             num1 = float(input("Insert a number: "))
+#             num2 = float(input("Insert a number: "))
+#             num3 = float(input("Insert a number: "))
+#
+#             # if input numbers are not floats, convert to integers
+#             if num1.is_integer():
+#                 num1 = int(num1)
+#             if num2.is_integer():
+#                 num2 = int(num2)
+#             if num3.is_integer():
+#                 num3 = int(num3)
+#
+#             # if all numbers are equal, restart the loop
+#             if num1 == num2 == num3:
+#                 print(f"\n{nums_are_equal_msg}\n")
+#                 continue
+#
+#             # determine the highest value
+#             highest_num = max(num1, num2, num3)
+#
+#             # check if there is only one highest number
+#             if (num1 == highest_num and num1 != num2 and num1 != num3) or \
+#                     (num2 == highest_num and num2 != num1 and num2 != num3) or \
+#                     (num3 == highest_num and num3 != num1 and num3 != num2):
+#                 return num1, num2, num3
+#
+#             print(f"\n{no_unique_highest_msg}\n")
+#
+#         except ValueError:
+#             print(f"\n{invalid_input_msg}\n")
