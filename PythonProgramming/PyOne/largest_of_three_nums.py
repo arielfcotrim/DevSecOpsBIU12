@@ -1,4 +1,6 @@
 # This python script receives a user input of three different numbers and returns which number is the largest value
+# Yes, this is overkill. But I wanted to write as a program that attempts to take all possibilities into account.
+# A program for something this simple should have zero bugs and should not stop running until concluded successfully.
 
 
 # initialize global variable for script execution completed successfully
