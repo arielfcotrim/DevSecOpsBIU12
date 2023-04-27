@@ -46,26 +46,26 @@ def get_num_input_from_user():
 
 def is_value_identical(num1, num2):
     # determine the highest value
-    highest_num = max(num1, num2)
+    lowest_num = min(num1, num2)
 
     # check if there is only one highest number
     if num1 != num2:
-        return highest_num
+        return lowest_num
 
     else:
         return None
 
 
-def set_highest_number():
+def set_lowest_number():
     while True:
         try:
             # get input from user
             num1, num2 = get_num_input_from_user()
 
             # check if there is a unique highest number
-            highest_num = is_value_identical(num1, num2)
-            if highest_num is not None:
-                return highest_num
+            lowest_num = is_value_identical(num1, num2)
+            if lowest_num is not None:
+                return lowest_num
 
             # if there are two highest values which are equal, notify user and restart the loop
             print(f"\n{values_are_identical_msg}"
@@ -77,18 +77,18 @@ def set_highest_number():
             print(f"\n{invalid_input_msg}\n")
 
 
-def display_highest_number():
+def display_lowest_number():
     # initialize variables for messages to be returned alongside the larger value
-    highest_num_msg = "The highest number is "
-    highest_num = set_highest_number()
+    lowest_num_msg = "The lowest number is "
+    lowest_num = set_lowest_number()
 
-    return f"{highest_num_msg}" + f"{highest_num}."
+    return f"{lowest_num_msg}" + f"{lowest_num}."
 
 
 # initialize variable which calls the function to get the largest number
 # initialize the function to get user input as the argument of the largest number function
-highest_number = display_highest_number()
-print(f"\n{highest_number}")
+lowest_number = display_lowest_number()
+print(f"\n{lowest_number}")
 
 # script finished successfully
 print(f"\n{goodbye_message}")
