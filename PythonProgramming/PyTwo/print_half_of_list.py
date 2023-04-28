@@ -3,9 +3,13 @@ import math
 
 def get_first_half_of_list():
     """
-    This function prompts the user to enter a list of numbers,
-    and then returns the first half of the list (rounded up).
+    This function prompts the user to enter a list of numbers separated by commas,
+    converts each string in the list to an integer, calculates the midpoint of the
+    list (rounded up), and returns the first half of the list (up to the midpoint).
+
+    :return: A list containing the first half of the user input list of numbers.
     """
+    
     # Prompt user to enter a list of numbers
     user_list = input("Enter a list of numbers separated by commas: ")
 
