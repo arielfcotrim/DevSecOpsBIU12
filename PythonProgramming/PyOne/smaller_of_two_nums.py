@@ -17,6 +17,12 @@ input_rule_explanation = "* You are allowed to input only numerical (integers an
 
 
 def get_num_input_from_user():
+    """
+    Get two numerical inputs from the user and returns a tuple with their values.
+
+    :return: tuple containing two numerical inputs
+    """
+
     # initialize variables for numbers as zero since value will be assigned based on input and loop number
     num1 = 0
     num2 = 0
@@ -45,6 +51,14 @@ def get_num_input_from_user():
 
 
 def is_value_identical(num1, num2):
+    """
+    Determines if two values are identical and returns the lowest of the two.
+
+    :param num1: first numerical value
+    :param num2: second numerical value
+    :return: the lowest numerical value if the two input values are not identical, otherwise None.
+    """
+
     # determine the highest value
     lowest_num = min(num1, num2)
 
@@ -57,6 +71,13 @@ def is_value_identical(num1, num2):
 
 
 def set_lowest_number():
+    """
+    Continuously gets user input until two numerical values are entered that are not identical.
+    Returns the lowest numerical value of the two entered.
+
+    :return: the lowest numerical value of the two inputs entered by the user.
+    """
+
     while True:
         try:
             # get input from user
@@ -78,6 +99,12 @@ def set_lowest_number():
 
 
 def display_lowest_number():
+    """
+    Determines the lowest number among the user's inputs and returns it as a string message.
+
+    :return: A string message indicating the lowest number among the user's inputs.
+    """
+
     # initialize variables for messages to be returned alongside the larger value
     lowest_num_msg = "The lowest number is "
     lowest_num = set_lowest_number()
