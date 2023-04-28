@@ -7,9 +7,9 @@ def get_first_half_of_list():
     converts each string in the list to an integer, calculates the midpoint of the
     list (rounded up), and returns the first half of the list (up to the midpoint).
 
-    :return: A list containing the first half of the user input list of numbers.
+    :return: first_half_of_list (a list containing the first half of the user input list of numbers)
     """
-    
+
     # Prompt user to enter a list of numbers
     user_list = input("Enter a list of numbers separated by commas: ")
 
@@ -23,10 +23,10 @@ def get_first_half_of_list():
     # Calculate the midpoint of the list (rounded up)
     midpoint = math.ceil(length / 2)
     # Get the first half of the list (up to the midpoint)
-    first_half = user_list[:midpoint]
+    first_half_of_list = user_list[:midpoint]
 
     # Return the first half of the list
-    return first_half
+    return first_half_of_list
 
 
 # Example usage:
