@@ -4,6 +4,13 @@ import numexpr as ne
 
 
 def get_valid_equation():
+    """
+    Prompts user to enter an equation and checks if it matches a valid equation pattern.
+    Returns the equation if it is valid, otherwise displays an error message and instruction.
+
+    :return: equation.strip()
+    """
+
     # initialize message variables
     invalid_equation = "ERROR: Not a valid equation."
     invalid_input = "ERROR: Invalid input."
@@ -32,6 +39,14 @@ def get_valid_equation():
 
 
 def split_equation(equation):
+    """
+    Receives an equation as input and splits it into expression and supposed result.
+    Returns a tuple containing the expression and the supposed result.
+
+    :param equation: equation.strip()
+    :return: expression, supposed_result
+    """
+
     # Define list of valid operators
     operators = ["+", "-", "*", "/", "//", "%", "**"]
 
@@ -56,6 +71,14 @@ def split_equation(equation):
 
 
 def evaluate_equation(expression, supposed_result):
+    """
+    Receives an equation expression and its supposed result and uses numexpr to evaluate the expression.
+    Compares the actual and supposed results and returns True if they match, False otherwise.
+
+    :param expression, supposed_result
+    :return: True or False (boolean)
+    """
+
     # initialize message variables
     zero_division_err_msg = "ERROR: Division by zero."
     invalid_eq_format = "ERROR: Invalid equation format."
