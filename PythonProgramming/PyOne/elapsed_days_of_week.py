@@ -4,6 +4,12 @@ import calendar
 
 # define a function to get numerical input from user
 def get_num_input():
+    """
+    This function receives numerical input from the user.
+
+    :return: integer value entered by the user
+    """
+
     # initialize error message variable
     error_message = "Only whole numbers are allowed!"
 
@@ -22,6 +28,13 @@ def get_num_input():
 
 # define a function to calculate the day of the week based on a given number
 def get_day_of_week(number):
+    """
+    This function calculates the day of the week based on a given number.
+
+    :param number: integer value
+    :return: custom message displaying the corresponding day of the week based on the number input
+    """
+
     # the remainder of the division by 7 is the day of the week
     day_of_week = number % 7
     # create a suffix based on the position of the day of the week
