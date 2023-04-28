@@ -4,9 +4,14 @@ import calendar
 from datetime import datetime
 
 
-# function receives input from user with a numeric value from 1 to 12 that represents the month
-# function returns the month's name and year and the number of days in that month
 def get_month():
+    """
+        Prompts the user to enter a numeric value representing a month (1-12),
+        determines the number of days in that month, and returns a string with
+        the month's name, year, and number of days.
+
+        :return: A string with the month's name, year, and number of days.
+        """
     # initialize error message variable
     invalid_value_msg = "Please enter a numeric value from 1 to 12."
 
