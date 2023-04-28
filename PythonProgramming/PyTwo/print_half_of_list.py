@@ -13,6 +13,7 @@ def get_first_half_of_list():
     user_list = user_list.split(',')
     # Convert each string in the list to an integer
     user_list = [int(i) for i in user_list]
+
     # Get the length of the list
     length = len(user_list)
     # Calculate the midpoint of the list (rounded up)
