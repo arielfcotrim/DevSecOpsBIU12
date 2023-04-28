@@ -3,6 +3,11 @@
 
 # Function to get a number from the user
 def get_number_input():
+    """
+    Prompts the user to enter a whole number and returns it.
+    If the user inputs a non-integer value, an error message is displayed and the user is prompted again.
+    :return: number
+    """
     while True:
         try:
             # input from the user must be an integer (whole number)
@@ -17,6 +22,11 @@ def get_number_input():
 
 # this function checks if a number can be divided by 3 without any remainder
 def is_divisible_by_3():
+    """
+    Calls the get_number_input function to prompt the user to enter a whole number.
+    Returns True if the number entered is divisible by 3 without any remainder, and False otherwise.
+    :return: boolean
+    """
     # initialize a variable to store the number entered by the user by calling the function
     number = get_number_input()
 
