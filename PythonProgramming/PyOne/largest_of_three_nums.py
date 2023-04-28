@@ -17,6 +17,12 @@ highest_num_rule_explanation = "* There should be at least ONE number with a uni
 
 
 def get_num_input_from_user():
+    """
+    Get three numeric inputs from user.
+
+    :return: tuple containing the three numeric inputs.
+    """
+
     # initialize variables for numbers as zero since value will be assigned based on input and loop number
     num1 = 0
     num2 = 0
@@ -48,6 +54,14 @@ def get_num_input_from_user():
 
 
 def is_highest_number_unique(num1, num2, num3):
+    """
+    Check if there is a unique highest number among three input numbers.
+
+    :param num1: First input number.
+    :param num2: Second input number.
+    :param num3: Third input number.
+    :return: The highest number if it is unique, otherwise None.
+    """
     # determine the highest value
     highest_num = max(num1, num2, num3)
 
@@ -64,6 +78,12 @@ def is_highest_number_unique(num1, num2, num3):
 
 
 def set_highest_number():
+    """
+    Loop to get the highest number input by user.
+
+    :return: The highest number entered by the user.
+    """
+
     while True:
         try:
             # get input from user
@@ -85,6 +105,12 @@ def set_highest_number():
 
 
 def display_highest_number():
+    """
+    Display the highest number input by user.
+
+    :return: A message indicating the highest number input by the user.
+    """
+
     # initialize variables for messages to be returned alongside the larger value
     highest_num_msg = "The highest number is "
     highest_num = set_highest_number()
