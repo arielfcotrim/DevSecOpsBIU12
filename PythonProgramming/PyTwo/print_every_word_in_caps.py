@@ -1,3 +1,5 @@
+# this python script will transform each word in a list of strings to all caps and print them separately
+
 def get_string_list_all_caps(strings_list):
     """
     Capitalizes each word in a list of strings and returns them separately.
