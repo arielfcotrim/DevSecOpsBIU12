@@ -25,10 +25,7 @@ def print_words(strings_list):
     """
 
     for string in strings_list:  # Loop over each string in the list
-        split_strings = string.split()  # Split the string into individual words
-
-        for word in split_strings:  # Loop over each word in the split_strings list and print it
-            print(word)
+        print(string)  # Print the string
 
 
 # Initialize a list of strings to be capitalized
