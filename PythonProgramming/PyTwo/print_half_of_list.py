@@ -1,3 +1,5 @@
+# this python script will print out the first half of a list of numbers
+
 import math
 
 
