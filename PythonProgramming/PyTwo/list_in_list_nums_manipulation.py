@@ -45,7 +45,7 @@ def get_average(total, length):
 
     average = total / length
 
-    # The average is rounded to 2 decimal places
+    # The average is rounded to 2 decimal places using the round() function
     rounded_average = round(average, 2)
 
     return rounded_average
