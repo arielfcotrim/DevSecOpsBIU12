@@ -48,7 +48,10 @@ def get_average(numbers):
     # The average is calculated by dividing the sum of the numbers by the number of numbers in the list
     average = total / len(numbers)
 
-    return average
+    # The average is rounded to 2 decimal places using the round() function
+    rounded_average = round(average, 2)
+
+    return rounded_average
 
 
 def get_numbers_mid_removed(numbers):
