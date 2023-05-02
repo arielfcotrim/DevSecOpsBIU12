@@ -63,7 +63,10 @@ def get_average(numbers):
     # sum is obtained by calling the get_sum function on the list of numbers
     average = get_sum(numbers) / len(numbers)
 
-    return average
+    # The average is rounded to 2 decimal places using the round() function
+    rounded_average = round(average, 2)
+
+    return rounded_average
 
 
 def get_numbers_mid_removed(numbers):
