@@ -1,3 +1,5 @@
+# this python program separates positive and negative numbers from a list
+
 def separate_pos_neg_numbers(numbers):
     """
     Separates positive and negative numbers from a list
