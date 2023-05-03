@@ -56,7 +56,7 @@ def print_list(num_list, list_name):
 
 # Main program
 # create a list of numbers
-numbers_list = [23, 4, 6, 23, 9, 21, 3, 45, 8]
+numbers_list = [-23, 4, -6, 23, -9, 21, -3, 45, -8, 14]
 
 # call the function to separate the numbers
 positive_nums, negative_nums = separate_pos_neg_numbers(numbers_list)
