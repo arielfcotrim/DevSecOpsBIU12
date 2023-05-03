@@ -1,3 +1,5 @@
+# this python program prints the original list and the list of types of elements in the original list
+
 def get_types_list(given_list):
     """
     :param given_list
@@ -27,6 +29,8 @@ def print_element_types(given_list):
     print(element_types_msg)
 
 
-# example usage
+# Main program
+# initialize a list with different types of elements
 original_list = [23, 'Python', 23.98]
+# call the function to print the original list and the list of types of elements in the original list
 print_element_types(original_list)
