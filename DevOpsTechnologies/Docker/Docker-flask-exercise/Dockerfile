@@ -17,4 +17,4 @@ ENV FLASK_APP=main.py
 EXPOSE 14000
 
 # Run the command to start the Flask app
-CMD flask run --port=14000 --host.0.0.0.0
+CMD flask run --port=14000 --host=0.0.0.0
