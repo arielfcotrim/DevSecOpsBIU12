@@ -13,9 +13,8 @@ RUN pip install -r requirements.txt
 # Set the environment variable FLASK_APP to the name of the Flask app file
 ENV FLASK_APP=color.py
 
-# Set the background color of the Flask app based on the value of the COLOR_MODE argument
-ARG COLOR_MODE=""
-ENV APP_COLOR=${COLOR_MODE}
+# Set the background color of the Flask app to a default value of blue
+ENV APP_COLOR=blue
 
 # Expose the port that the app will run on
 EXPOSE 14000
