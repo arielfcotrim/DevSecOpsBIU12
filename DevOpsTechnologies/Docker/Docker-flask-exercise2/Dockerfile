@@ -2,7 +2,7 @@
 FROM python:3.10.11-alpine3.17
 
 # Set the working directory to /app
-WORKDIR /flask-app
+WORKDIR /flask-color-app
 
 # Copy the current directory contents into the container at /flask-app
 COPY . .
