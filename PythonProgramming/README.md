@@ -16,13 +16,13 @@
 * Exceptions
 * Handling Files (csv, json, txt)
 
-## Projects:
+### Projects:
 * Treasure Hunt: 
 * Tic Tac Toe
 * Guess the Word
 * Rock, Paper, Scissors
 
-## Final Projects:
+### Final Projects:
 * Project 1
 * Project 2
 * Project 3
