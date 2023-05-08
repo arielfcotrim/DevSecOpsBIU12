@@ -16,11 +16,11 @@ DevSecOpsBIU12 is a repository that contains coursework and projects from the De
 * AWS
 * Secure Code
 
-### Linux Administration
+## Linux Administration
 
-### Bash Scripting and Programming
+## Bash Scripting and Programming
 
-### Python Programming
+## Python Programming
 This module covers:
 * Data types, variables and operators
 * Conditionals
@@ -38,13 +38,13 @@ This module covers:
 * Handling Files (csv, json, txt)
 * Git
 
-#### Projects:
+### Projects:
 * Treasure Hunt
 * Tic Tac Toe
 * Guess the Word
 * Rock, Paper, Scissors
 
-#### Final Projects:
+### Final Projects:
 * Project 1
 * Project 2
 * Project 3
@@ -54,18 +54,18 @@ This module covers:
 * Project 7
 * Project 8
 
-### Docker Containers & Docker Compose
+## Docker Containers & Docker Compose
 
-### Kubernetes
+## Kubernetes
 
-### CI/CD
+## CI/CD
 
-### Monitoring
+## Monitoring
 
-### Ansible
+## Ansible
 
-### Terraform
+## Terraform
 
-### AWS
+## AWS
 
-### Secure Code
+## Secure Code
