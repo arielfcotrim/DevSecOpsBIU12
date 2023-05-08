@@ -20,6 +20,8 @@ DevSecOpsBIU12 is a repository that contains coursework and projects from the De
 
 ## Bash Scripting and Programming
 
+## Git & GitHub
+
 ## Python Programming
 This module covers:
 * Data types, variables and operators
