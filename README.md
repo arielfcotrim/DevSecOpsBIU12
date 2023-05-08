@@ -38,7 +38,6 @@ This module covers:
 * RESTful APIs, HTTPs Requests, dict and JSON
 * Exceptions
 * Handling Files (csv, json, txt)
-* Git
 
 ### Projects:
 * Treasure Hunt
