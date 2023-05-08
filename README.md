@@ -37,21 +37,22 @@ This module covers:
 * Exceptions
 * Handling Files (csv, json, txt)
 * Git
-* 
-* Projects:
-* * Tic Tac Toe
-* * Guess the Word
-* * Rock, Paper, Scissors
-* 
-* Final Projects:
-* * Project 1
-* * Project 2
-* * Project 3
-* * Project 4
-* * Project 5
-* * Project 6
-* * Project 7
-* * Project 8
+
+#### Projects:
+* Treasure Hunt
+* Tic Tac Toe
+* Guess the Word
+* Rock, Paper, Scissors
+
+#### Final Projects:
+* Project 1
+* Project 2
+* Project 3
+* Project 4
+* Project 5
+* Project 6
+* Project 7
+* Project 8
 
 ### Docker Containers & Docker Compose
 
