@@ -4,7 +4,7 @@ services:
   api:
     build: ./backend
     depends_on:
-      - db  
+      - db
     ports:
       - 3001:3001
     environment:
