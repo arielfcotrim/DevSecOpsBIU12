@@ -11,3 +11,5 @@ spec:
   - port: 3030
     targetPort: 80
     nodePort: 31313
+  selector:
+    client: web
