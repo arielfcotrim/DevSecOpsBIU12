@@ -1,4 +1,0 @@
-git diff
-set vscode as the default git diff tool
-using the command 'git config --global diff.tool vscode'
-and the command 'git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
