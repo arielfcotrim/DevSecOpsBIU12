@@ -3,7 +3,7 @@
 
 *Setting VSCode as the default 'git diff tool'*
 
-Rrun command: git config --global diff.tool vscode
+Run command: git config --global diff.tool vscode
 Run command: git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 
 The "$LOCAL $REMOTE" part doesn't get saved for some reason
