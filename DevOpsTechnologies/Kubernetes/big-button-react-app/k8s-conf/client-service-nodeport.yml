@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: big-service
+
+spec:
+  selector:
+    name: big
+  ports:
+  # internal port
+  - port: 4000
+    # container port
+    targetPort: 3000
+    # exposed port
+    nodePort: 31234
