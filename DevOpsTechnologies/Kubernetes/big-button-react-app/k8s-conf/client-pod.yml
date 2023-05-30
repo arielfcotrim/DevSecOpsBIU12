@@ -10,5 +10,6 @@ spec:
   containers:
   - name: big-container
     image: big:v1
+    imagePullPolicy: IfNotPresent
     ports:
       - containerPort: 3000
