@@ -5,6 +5,7 @@ metadata:
   name: big-service
 
 spec:
+  type: NodePort
   selector:
     name: big
   ports:
@@ -12,5 +13,5 @@ spec:
   - port: 4000
     # container port
     targetPort: 3000
-    # exposed port
+    # exposed (external) port
     nodePort: 31234
