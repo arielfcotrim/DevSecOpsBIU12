@@ -3,22 +3,42 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: myapp
+  name: flaskapp-deployment
 
 spec:
+  replicas: 3
+
   selector:
     matchLabels:
-      app: myapp
+      flask: app
 
   template:
     metadata:
       labels:
-        app: myapp
+        flask: app
 
     spec:
       containers:
-      - name: myapp
-        image: <Image>
-        
+      - name: flaskapp-container
+        image: arielforner/flaskapp-k8s-practice:v1
+
         ports:
-        - containerPort: <Port>
+        - containerPort: 5200
+---
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: external-node-port
+
+spec:
+  type: NodePort
+  
+  selector:
+    flask: app
+
+  ports:
+  - port: 5200
+    targetPort: 5200
+    nodePort: 31311
