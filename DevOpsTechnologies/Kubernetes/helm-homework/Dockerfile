@@ -1,6 +1,6 @@
 FROM node:latest
 WORKDIR /app
 COPY ["package.json", "yarn.lock", "/app/"]
-RUN yarn
+RUN npm i
 COPY [".", "/app"]
-CMD ["npm", "build"]
+CMD ["npm", "start"]
