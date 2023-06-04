@@ -1,6 +1,6 @@
 FROM node:latest
 WORKDIR /app
-COPY ["package.json", "yarn.lock", "/app/"]
+COPY ["package.json", "/app/"]
 RUN npm i
 COPY [".", "/app"]
 EXPOSE 3000
