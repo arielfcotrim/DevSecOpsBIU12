@@ -1,0 +1,9 @@
+deployment:
+  applicationname: quizapp
+  labelkey: quiz
+  labelvalue: app
+  numberofreplicas: 2
+  imageurl: arielforner/quiz-helm-app:v1
+  port: 3000
+service:
+  nodePort: 30006
