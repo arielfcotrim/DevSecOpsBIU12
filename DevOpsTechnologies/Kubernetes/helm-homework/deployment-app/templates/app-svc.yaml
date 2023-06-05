@@ -9,4 +9,4 @@ spec:
   ports:
   - port: {{ .Values.deployment.port }}
     targetPort: {{ .Values.deployment.port }}
-    nodePort: {{ .Values.service.nodeport }}
+    nodePort: {{ .Values.service.nodePort }}
