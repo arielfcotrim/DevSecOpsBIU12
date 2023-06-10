@@ -1,0 +1,40 @@
+pipeline{
+    agent any
+    environment{
+        NAME= 'zahi'
+        LASTNAME= 'toozon'
+        SECRET= credentials('hodisecret')
+    }
+    stages{
+        stage('checkout'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/devopsPRO27/03.01.22']]])
+            }
+        }
+        stage('build'){
+            steps{
+               sh 'python3 Loops.py'
+            }
+        }
+        stage('test'){
+            steps{
+                timeout(time: 3,unit: 'SECONDS'){
+                    sh 'sleep 1'
+                }
+                
+            }
+        }
+    
+    }
+    post{
+        aborted{
+            sh 'echo please give me more time'
+        }
+        success{
+            sh 'echo docker build -t $SECRET .'
+        }
+        failure{
+            sh 'echo die'
+        }
+    }
+}

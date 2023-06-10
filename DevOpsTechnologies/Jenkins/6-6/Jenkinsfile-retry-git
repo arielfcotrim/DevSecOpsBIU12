@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage('checkout'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/devopsPRO27/03.01.22']]])
+            }
+        }
+        stage('build'){
+            steps{
+               sh 'python3 Loops.py'
+            }
+        }
+        stage('test'){
+            steps{
+                retry(3){
+                    sh 'erho testinnnnnnng'
+                }
+            }
+        }
+    }
+}
