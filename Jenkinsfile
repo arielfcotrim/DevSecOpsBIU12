@@ -4,7 +4,7 @@ pipeline{
     {
         NAME = 'ariel'
         LASTNAME = 'f. cotrim'
-        // SECRET = credentials('hodisecret')
+        SECRET = credentials('mermaid')
     }
     stages
     {
