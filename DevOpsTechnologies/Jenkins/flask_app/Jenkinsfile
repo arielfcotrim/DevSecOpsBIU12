@@ -8,8 +8,17 @@ pipeline {
                         userRemoteConfigs: [[url: 'https://github.com/example/repo.git']]])
             }
         }
-    }
+        // stage('cd: change directory') {
+        //     steps {
+        //             sh 'echo cd ${WORKSPACE}/DevSecOpsBIU12/DevOpsTechnologies/Jenkins/flask_app"'
+        //             dir("${WORKSPACE}/DevSecOpsBIU12/DevOpsTechnologies/Jenkins/flask_app") {
+        //         }
+        //     }
+        // }
         stage('build'){
+            agent docker{
+                image: 'python'
+            }
             steps{
                 sh 'echo Running main.py'
                 sh 'python3 main.py'
