@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python'
+            args '-p 5000:5000 -u root'
+            }
+        }
     stages {
         stage('checkout'){
             steps{
@@ -16,11 +21,10 @@ pipeline {
         //     }
         // }
         stage('build'){
-            agent docker{
-                image: 'python'
-            }
             steps{
-                sh 'echo Running main.py'
+                sh 'echo Running "pip install -r requirements.txt"'
+                sh 'sudo pip install -r requirements.txt'
+                sh 'echo Running "main.py"'
                 sh 'python3 main.py'
             }
         }
