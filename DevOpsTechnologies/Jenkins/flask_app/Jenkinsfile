@@ -4,6 +4,9 @@ pipeline {
             image 'python'
             args '-p 5000:5000 -u root'
             }
+        parameters{
+            string(name: 'NAME', defaultValue: '', description: '')
+        }
         }
     stages {
         stage('checkout'){
@@ -30,17 +33,27 @@ pipeline {
         }
         stage('test'){
             steps{
-                sh 'testing...'
+                sh 'echo testing...'
+                sh 'pytest test.py'
             }
         }
         stage('build an image'){
+            when{
+                branch 'dev'
+            }
+            agent{
+                dockerfile true
+            }
             steps{
                 sh 'echo building image'
             }
         }
         stage('post'){
+            when{
+                params.NAME == 'ariel'
+            }
             steps{
-                sh 'echo posting'
+                echo "post $params.NAME"
             }
         }
     }
