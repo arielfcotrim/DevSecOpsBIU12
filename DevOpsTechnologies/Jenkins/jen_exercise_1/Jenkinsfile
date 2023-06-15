@@ -10,12 +10,13 @@ Pipeline {
         }
         stage('test') {
             steps {
+                sh 'pip install pytest'
                 sh 'pytest requests/TestRest'
             }
         }
         stage('deploy') {
             steps {
-                sh ''
+                sh 'docker build -t first_jenkins_project request/.'
             }
         }
     }
