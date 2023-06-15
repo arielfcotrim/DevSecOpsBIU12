@@ -1,0 +1,22 @@
+Pipeline {
+    agent any
+
+    stages {
+        stage('build') {
+            steps {
+                sh 'pip install requests'
+                sh 'python3 requests/http_e.py'
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'pytest requests/TestRest'
+            }
+        }
+        stage('deploy') {
+            steps {
+                sh ''
+            }
+        }
+    }
+}
