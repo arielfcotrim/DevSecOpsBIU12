@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=example
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db-password
+    secrets:
+      - db-password
+
+  backend:
+    build: ./backend
+    environment:
+      - MYSQL_HOST=db
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+
+secrets:
+  db-password:
+    file: ./db/password.txt
